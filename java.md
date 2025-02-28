@@ -140,7 +140,7 @@ Not visible to child calsss
 ### Disadvantage:
 - The only disadvantage is that they consume more memory than the traditional class since upon each modification of them a new object is created in the memory
 ## Waht is singleton class in java? How can we make singleton class?
-
+Hello
 
 
 
