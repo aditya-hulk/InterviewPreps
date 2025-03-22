@@ -94,4 +94,145 @@
 
 - Java LinkedList class implements List, Deque, and Queue interfaces. It extends AbstractSequentialList. It also implements marker interfaces such as serializable and cloneable but does not implement random access interface.
 
+# ***  ***About Method Overridding***
+- When the superclass method is available to subclass by default through inheritance
+    - and subclass does not satisfy with superclass implementation, 
+    - then the subclass is allowed to redefine that method on its requirement. 
+    - This feature is called method overriding in Java.
+- ***To override a method*** in a subclass,
+    - the method must be defined in the subclass using the ***same signature*** 
+    - and ***same return type*** as in its superclass
+- Method overriding occurs only when the signatures of the super and subclasses methods are identical.
+    - If they are not, then both methods are simply overloaded methods.
+
+![alt text](image-59.png)![alt text](image-60.png)
+## About concept of oop's
+- as per the object-oriented programming concept, the best practice is that class should not be opened for modification.
+- if you want to modify the existing functionality of the class, you should not disturb the existing class.
+    - You should always write a subclass of the existing class and add new functionality in subclass like this:
+## Features
+- supports the runtime polymorphism.
+- Only the instance method can be overridden in Java.
+- An instance variable can never be overridden in Java.
+- The overriding method can not be more restrictive access modifiers than the overridden method of the superclass.
+- Overriding concept is not applicable for private, final, static, and main method in Java.
+- From Java 5 onwards, method overriding can also be done by changing the covariant return type only.
+- Overriding method cannot throw any checked exception.Since it is resolved at runtime and not on compile time so Unchecked exception will be thrown if needed.
+## About covariant return type
+- Covariant return, means that when one overrides a method, the return type of the overriding method is allowed to be a subtype of the overridden method's return type.
+    - Imagine a superclass Animal with a method makeSound() that returns String.
+    -  A subclass Dog could override makeSound() and return a more specific type like String (e.g. "Woof!"). 
+- To clarify this with an example, a common case is Object.clone() - which is declared to return a type of Object.
+- You could override this in your own class as follows:
+
+![alt text](image-61.png)
+- Clone method retrun type is objct but if you override it properly it return type is MyFoo. This is more specific covarient return type.
+## Method Overriding rules
+- Subclass method name must be the same as the superclass method name.
+- the method signature must be the same or matched.
+    - i.e  method name and argument types must be matched.
+- Must be Is-A relationship (Inheritance).
+- Subclass method’s return type must be the same as the superclass method return type. 
+    - But onwards 1.5 version covarient return type is allowed.
+- Overriding method cannot throw new or broader checked exceptions. 
+    -  But, it can throw fewer or narrower checked exceptions or any unchecked exception.
+- Subclass method’s access modifier must be the same or less than the superclass method access modifier.
+
+![alt text](image-62.png)![alt text](image-63.png)
+## Why do We Need to Create Subclass in Java?
+- For example, a student has properties like age and location
+    - But in the future, if we get a new requirement to add one more property “address” for that student,
+- we should make a subclass of that class and add a new property address in the subclass.
+- To override or change the existing functionality of the superclass method. We create subclass
+## What is @Override Annotation in Java?
+- Introduced in 1.5 version
+- via this compiler checks all the rules of overridding.
+    - Method name same.
+    -  Parameters are the same.
+    - Superclass and subclass relation.
+
+![alt text](image-64.png)![alt text](image-65.png)
+## When to Use @Override Annotation in Java?
+- Used for  readability and understanding.
+- It will follow all rules for overriding.
+- Other person can understand.
+## Who (Java compiler or JVM) decides Which Method is to be Executed?
+- In case of method overriding the JVM decide which method is to be executed.
+- JVM decides method call depending on the runtime object of the class.
+- At runtime, JVM will check that the reference variable is pointing to the which class object? parent class object or child class object.
+- if refrence pointing to parent class object parent class method is called and vice versa.
+- method resolution is always based on runtime object
+- Therefore, it is also called runtime polymorphism or dynamic polymorphism, or late binding in java.
+
+![alt text](image-66.png)![alt text](image-67.png)
+## Why cannot Private Method be Overridden?
+-  it will not be visible to the subclass.
+- Whatever methods we writing in the subclass will be treated as a new method but not an overridden method.
+
+![alt text](image-68.png)
+## Can We Stop Method Overriding in Java?
+- Yes, we can stop method overriding by declaring method as final. 
+
+![alt text](image-69.png)
+## Advantages of Using Method Overriding in Java
+- It is used to achieve runtime polymorphism in Java.
+- It is used to change the existing functionality of the superclass method.
+- Method overriding allows us to extend the functionality of a superclass without altering its original implementation. We can add a new feature or property in subclass.
+# *** ***About Method hiding***
+- A static method (class method) cannot be overridden in Java. 
+- But if a static method defined in the parent class is redefined in a child class, 
+    - then the child class’s method hides the method defined in the parent class.
+- This mechanism is called method hiding in Java or function hiding. 
+## Rules of Method Hiding in Java
+- All the rules of method hiding are exactly the same as overriding, 
+-  except one rule. Both parent and child class methods must be static.
+## Features of Method Hiding in Java
+- Method hiding is also known as compile-time polymorphism
+    - because the compiler is responsible for resolving method resolution based on the reference type.
+- It is also known as static polymorphism or early binding.
+-  In method hiding, method call is always resolved by Java compiler based on the reference type.
+    - There is no role of runtime polymorphism in method hiding in Java.
+
+![alt text](image-70.png)![alt text](image-71.png)![alt text](image-72.png)
+- In the method overriding, the method call is resolved by JVM based on the runtime object (new Object).
+-  In the method hiding, the method call is resolved by the Java compiler based on reference type (Object obj).
+## Difference between Method Hiding and Method Overriding
+### Method Hiding
+- In method hiding, both parent and child class methods should be static
+- Compiler is responsible for method resolution based on reference type
+- Method hiding is also known as compile-time polymorphism, static polymorphism, or early binding, 
+### Method Overriding
+- whereas in overriding, both parent and child class methods should be non-static.
+-  JVM is always responsible for method resolution based on runtime object.
+- whereas method overriding is also known as runtime polymorphism, dynamic polymorphism, or late binding.
+# *** ***Variable Hiding***
+- When a variable defined in the parent class is redefined with the same name in a child class
+    - the child class’s variable hides variable defined in the parent class. 
+    - This mechanism is called variable hiding in Java.
+- It can be achieved by declaring a variable in the child class that must be the same name and type of an inherited variable from its parent class.
+- Variable hiding is useful when you want to reuse the same variable name in the subclass.
+
+![alt text](image-73.png)
+## Catch
+- When an instance variable in a child class has the same name as an instance variable in a parent class,
+    - the instance variable is chosen from the ***reference type***.
+
+![alt text](image-74.png)![alt text](image-75.png)
+## Catch-2
+-  when we declare a local variable in a method with the same name as an instance variable
+- then the local variable hides instance variable.
+- This concept is useful if you want to reflect the change made over to the instance variable.
+
+![alt text](image-76.png)![alt text](image-77.png)
+
+
+
+
+
+
+
+
+
+
+
 
