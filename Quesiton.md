@@ -14,5 +14,10 @@ https://www.scientecheasy.com/2020/07/method-overriding-java.html/
 
 ## Covariant return type?
 
+## this()
+
+## Executor
+https://www.youtube.com/watch?v=tDbTJWziEP0&list=PLn2GH4dN5i2BxPJ3qFXOfPpy_EbQUurcm&index=6
+
 # Question Remain
 ## 1-last) What is singleton class in java? How can we make a class singleton?

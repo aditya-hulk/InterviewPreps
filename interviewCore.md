@@ -191,10 +191,103 @@ operations. To avoid it, Integer wrapper class is declared as final.
 - whereas this keyword can be used in the instance block.
 ## Can we declare a static block inside a method?
 - No, we cannot declare a static block inside a method.
-
-
 ## Code Snippet
 ![alt text](image-47.png)![alt text](image-48.png)![alt text](image-49.png)![alt text](image-50.png)![alt text](image-51.png)![alt text](image-52.png)![alt text](image-53.png)![alt text](image-54.png)![alt text](image-55.png)![alt text](image-56.png)![alt text](image-58.png)![alt text](image-78.png)![alt text](image-79.png)![alt text](image-80.png)![alt text](image-81.png)![alt text](image-82.png)![alt text](image-83.png)![alt text](image-84.png)
+# *** ***Constructor***
+## 8. Can we use this() and super() inside the constructor?
+![alt text](image-85.png)![alt text](image-87.png)
+- No, this() and super() cannot be used together inside the constructor.
+- WE can call super and this keyword in pgm, but not together.
+## 12. Does a constructor of the class get called, before or after creating an object?
+![alt text](image-86.png)
+- A constructor gets called concurrently when the object creation is going on.
+- JVM first allots memory space for the object in the heap and then executes the constructor to initialize instance variables.
+- By the time object creation is completed, the execution of a constructor is completed.
+## 35. What is constructor chaining in java?
+![alt text](image-97.png)
+- Constructor chaining in Java is a technique of calling one constructor from within another constructor by using this and super keywords.
+- The keyword “this” is used to call a constructor from within another constructor in the same class.
+- The keyword “super” is used to call the parent (super) class constructor from within child (subclass) class constructor. It occurs through inheritance.
+    - When we create a subclass object, the subclass constructor first calls its superclass constructor before performing its own tasks.
+    - This process continues until it reaches the last chained constructor and the end of the chain will always Object class constructor. 
+## 41. What is the difference between constructor and method?
+![alt text](image-98.png)
+## 1. What is a constructor in Java?
+-  A constructor is a block of code, similar to a method
+- It is used to initialize the state of an object (i.e. instance variable) in a class through a new operator. 
+- It is automatically called and executed at the time of object creation by JVM.
+## 2. What is the main objective of a constructor in java? Or, Why do we need a constructor in a class as a member?
+- The main objective/purpose of a constructor in java is to initialize instance variables in a class 
+## 3. When a constructor is called/invoked in Java?
+- Every time an object is created with a new keyword. then  The constructor of a class is called.
+- In bellow snipette the constructor is called 2 times
+
+![alt text](image-99.png)
+## 4. Is it possible for a class to have multiple constructors in java?
+- Yes, a class can have multiple constructors with different parameters
+- Which constructor gets called for object creation depends on the arguments passed while constructing different objects.
+## 5. Does a constructor return any value?
+- The constructor can not have any return type even void also 
+- because if there is a return type then JVM would consider as a method, not a constructor.
+## 6. Can a constructor be marked with the final keyword?
+-  No, a constructor cannot be marked with the final keyword.
+## 7. Is it possible to inherit a constructor?
+- No, a constructor cannot be inherited in java.
+## What are possible access modifiers that can be marked for a constructor?
+- private: The constructor marked with private can be accessed only from its class.
+- protected: The constructor declared with protected access modifier is accessible from any class which resides in the same package.
+- public: The public constructor is accessible from any class within or outside the package.
+## Is it possible to invoke a constructor of a class more than once for an object?
+- No, it is not possible to call a constructor of a class more than once for an object.
+- It is invoked only once per object at the time of object creation.
+##  How many types of constructors are in Java?
+- Default constructor (Non-parameterized constructor)
+- Parameterized constructor
+## What is a default constructor?
+-  A constructor that takes no parameter is called default constructor
+## . What is a parameterized constructor?
+- A constructor that contains one or more parameters is called parameterized constructor.
+## What is the main purpose of default constructor in java?
+- The main purpose of default constructor is to initialize default values (null or zero value) to the objects.
+- Java compiler creates a default constructor at compile time only if there is no constructor in a class.
+##  Is it necessary to define a constructor as the same name as the name of class?
+- Yes, a constructor must have the same name as that of class name
+- If the name of constructor is different, Java compiler will treat it as a normal method.
+##  Is it possible to call a constructor from another constructor if multiple constructors are defined in a class?
+- If multiple constructors are defined inside a class, it is possible to call a constructor from another constructor using this keyword.
+## What is the use of constructor in java?
+- to assign the default value of instance variables.
+- to execute a particular code at the time of object creation,
+## Can we declare a constructor as private?
+- Yes, we can declare a constructor with a private access modifier
+- It is mainly done not to allow users to create an object of class from outside of the class.
+- eg singleton desing pattern
+## Why a constructor defined by Java compiler is always called as default constructor?
+- A constructor defined by Java compiler is always called as default constructor because it obtains all its default properties from its class. 
+- a) Its access modifier is same as its class access modifier.
+- b) Its name is same as class name.
+- c) It has no parameters and logic.
+##  What is constructor overloading in Java?
+- Constructor overloading is a technique in which a class can have more than one constructor having the same name but different parameter lists.
+## What are the advantages of constructor overloading in Java?
+- Java constructor overloading helps to achieve static polymorphism.
+- The main advantage of constructor overloading is to allow an instance of a class to be initialized in various ways.
+## Can we have more than one constructor with same signature in a class?
+- No, we cannot have more than one constructor with same signature in a class.
+## Why do we use/need constructor chaining?
+- Constructor chaining can be used when we want to perform multiple tasks in a separate constructor for each task and make their order by chaining.
+- It is useful to make the program more readable and easy to understand for everyone.
+## How to call one constructor from another constructor in Java?
+- Using this(), we can call the current class constructor within the “same class”.
+- Using super(), we can call the superclass constructor from the “base class”.
+## What is a copy constructor?
+- : A constructor which is used to copy the data of one object to another object of the same class type is called copy constructor in Java.
+## Can we create an object of class within the same class if a constructor is marked with private?
+- Yes, we can create an object of class within the same class if constructor is marked with private but not outside the class.
+##  Can class be extended when a constructor is declared private?
+- No.
+## Snipette
+![alt text](image-89.png)![alt text](image-90.png)![alt text](image-91.png)![alt text](image-92.png)![alt text](image-93.png)![alt text](image-94.png)![alt text](image-95.png)![alt text](image-96.png)![alt text](image-100.png)![alt text](image-101.png)![alt text](image-102.png)![alt text](image-103.png)![alt text](image-104.png)![alt text](image-105.png)![alt text](image-106.png)![alt text](image-107.png)
 
 
 
