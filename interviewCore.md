@@ -285,9 +285,103 @@ operations. To avoid it, Integer wrapper class is declared as final.
 ## Can we create an object of class within the same class if a constructor is marked with private?
 - Yes, we can create an object of class within the same class if constructor is marked with private but not outside the class.
 ##  Can class be extended when a constructor is declared private?
-- No.
+- No.l
 ## Snipette
 ![alt text](image-89.png)![alt text](image-90.png)![alt text](image-91.png)![alt text](image-92.png)![alt text](image-93.png)![alt text](image-94.png)![alt text](image-95.png)![alt text](image-96.png)![alt text](image-100.png)![alt text](image-101.png)![alt text](image-102.png)![alt text](image-103.png)![alt text](image-104.png)![alt text](image-105.png)![alt text](image-106.png)![alt text](image-107.png)
+# *** ***Access Modifier***
+## What is the Java equivalent of a struct?
+- Struct is defined in C and C++, there is nothing like struct in java.
+    - But when we define varaibles, costructor like pojos in java it works as struct.
+    - This is eg of mutable struct.
+    - and when we define class with public static final fields in java it act like immutable struct.
+## 14. Can we define struct members as protected?
+- No, we cannot define struct members as protected because struct does not support inheritance.
+## About internal keyword in java?
+- When no access modifier is provided then it is treated as internal.
+- also called as package private or default access modifier.
+## 12. Which is the default access modifier?
+-  if no access modifier is mentioned with a class or its members.
+    -  ‘Internal’ is the default access modifier
+    - Internal is a keyword that is used for declaration.
+## 15. What is the default access specifier for a class, an interface, and struct declared directly with a namespace?
+- Internal
+## How many types of modifiers in Java?
+- 2 types
+    - Access modifiers
+    -   Non- access modifiers
+## What are Access modifiers in java?
+- Access Modifiers are those modifiers that are used to restrict the visibility of classes, fields, methods, and constructors.
+- Java supports four types of access modifiers:
+    - Private
+    - Default
+    - Protected
+    - Public
+- Private:
+    - Private members of a class can be accessed only within the class
+    - outside u cannot access
+- Default:
+    - It is accessible with in the class
+    - and within the same package
+    - They cannot access outside of the package
+- Protected:
+    - with in the class
+    - with in the same package
+    - accessible outside of the package via inheritance (to subclasses it is accessible)
+    - Outside of package to another class (which is not subclass) cannot access
+- Public:
+    - access everywhere
+## Can we have a private constructor in Java?
+-  Yes, we can have a private constructor in Java.
+    - The private constructor is used when we do not want to create the object of that class.
+    - It is also used in Singleton design and Factory method design patterns.
+    - We cannot create a subclass of that class.
+## Which access modifiers can be used with a class?
+- public 
+- default
+    - only this access specifier used for the class
+## Can we instantiate the object of derived class if the parent constructor is protected?
+- No, we cannot instantiate the object of derived class if the parent constructor is protected.
+## What are non-access modifiers in Java?
+- There are four non-access modifiers in Java.
+    - static
+    - final
+    - abstract
+    - synchronized
+- static:
+    - It is used to check whether the memeber is class member or instance member.
+- final:
+    - It is used to restrict the further modification of a class, field or method.
+- abstract:
+    - An abstract class is used for further modification
+- synchronized:
+    - It is used to achieve the thread safety
+## Can we declare a top-level class as private?
+- No, we cannot declare a top-level or outer class as private or protected.
+- Top level class can be public or with no modifier.
+- If u declare it with private then Compiler give "modifier not allowed here" i.e CE
+- But inner class can be private / protected.
+##  Can we declare an abstract method as private?
+- No, an abstract method cannot be private. 
+- They must be declared as public, protected, or default so that they can be further modified.
+## Can a method or a class be final and abstract at the same time?
+- No, it is not possible.
+-  the final method or final class cannot be further modified 
+- whereas an abstract class or an abstract method must be modified further.
+## What is the default access modifier for Interface?
+- public 
+- Other than public no access modifier is allowed.
+## What is access modifier for enumeration?
+- Enumeration members are always public. 
+-  No other access modifiers are allowed.
+## Which is the least restrictive access modifier in Java?
+- public 
+##  Which is the most restrictive access modifier in Java?
+- private
+## Which access modifier is also known as Universal access modifier?
+- public
+## Explain visibility control in Java.
+- Visibility control in Java is implemented by the access modifiers.
+
 
 
 
