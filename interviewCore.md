@@ -381,6 +381,56 @@ operations. To avoid it, Integer wrapper class is declared as final.
 - public
 ## Explain visibility control in Java.
 - Visibility control in Java is implemented by the access modifiers.
+# *** ***Java Fundamental Interview Questions for 2025***
+![alt text](image-108.png)
+## 1. What is object-oriented programming?
+- object-oriented programming is about creating objects that contain both data and methods.
+-  It is an extension of procedural programming.
+## 3. What is a procedural programming paradigm?
+- Procedural programming is about writing procedures or methods that perform operations on the data
+### Advantage
+- OOP is faster and easier to execute
+- OOP makes it possible to create full reusable applications with less code and shorter development time
+## What is Jdk, JRE and Jvm?
+![alt text](image-109.png)
+### Jdk
+- Jdk stands for Java developement kit.
+- It internally contains JRE + JVM
+- Jdk provide all the tools (javac compiler,debbugger etc) to work with Java language.
+### JRE
+- JRE stands for Java Runtime Environment
+- It provide environments to execute the Java Program.
+- It contains JVM.
+### JVM
+- JVM stands for Java virtual machine.
+- It is actually responsible to execute a java program.
+- It provides interpreter s/w written in C language which can execute the java program.
+## About Java
+![alt text](image-110.png)![alt text](image-111.png)
+### Remember
+![alt text](image-112.png)![alt text](image-113.png)
+### What is line by line interpretation?
+- JVM can interpret bytecode line by line. 
+- JVM ये  bytecode को  parse करलेंगे . 
+- और  उसमे  जो  instruction है    उनको  group कर  लेंगा.
+     - Like (1st कोनसा  चलना  और  2nd  कोनसा )
+- Then JVM ये  grouped instruction को  then line by line चलता  है
+### Why interpreter is slow than compiler.
+- At 1st parse it will group the instruction 
+- And at 2nd parse it will run line by line grouped instruction
+- That’s why interpreter is slow and compiler is fast.
+### Intresting insight
+- Instead of always interpreting, sometimes JVM can compile also.
+- Jvm के  अंदर  JIT (Just in time compiler) भी  होता  है 
+- Eg: कोई  block of code है , JVM को  लग  रहा  है  ये   दुबारा  repeat होंगे . So JVM उसको   compile करके  रख  लेता  है .
+- वो  code को  बार  बार  compile करके  interpret नहीं  करनेगा .
+- Add function 10 बार  use हो  रहा  है 
+- तो  JIT उसको  compile करके  रख  लेंगा .. और  interpreter उस  compile code को  use कर  लेंगा .
+
+
+
+
+
 
 
 
