@@ -426,6 +426,187 @@ operations. To avoid it, Integer wrapper class is declared as final.
 - वो  code को  बार  बार  compile करके  interpret नहीं  करनेगा .
 - Add function 10 बार  use हो  रहा  है 
 - तो  JIT उसको  compile करके  रख  लेंगा .. और  interpreter उस  compile code को  use कर  लेंगा .
+## About JVM architecture
+![alt text](image-114.png)
+- Java file or Source file having extension as .java 
+- It will compile by Compiler and converted to .class file or bytecode.
+- And this bytecode is given to JVM.
+### Internal Architecture of JVM.
+![alt text](image-115.png)
+### 1)	About Class-loader:
+![alt text](image-116.png)![alt text](image-117.png)
+#### ***1.1)About Loading:***
+-	Reads .class file
+-	Generate binary data
+-	Save info in method Areas
+    -	Fully qualified name of loaded class
+    -	It’s immediate parent class
+    -	The .class file is related to particular interface, Enum etc.
+    -	Modifier, method info etc.
+- ***To load .class file in Class loader we have 3 class loader.***
+    - 1.	Boot-Strap class loader
+    - 2.	Extension class loader
+    - 3.	System/ Application class loader
+- ***Its Segregation will be based from where it will load .class file.***
+- ***Bootstrap Class loader***
+    - It will load the classes from bootstrap path.
+    - “JAVA_HOME/jre/lib”
+- ***Extension Class loader***
+    - It is the child class of Bootstrap class loader. 
+    - It will load the class from configurable path.
+    - “JAVA_HOME/jre/lib/ext”
+- ***System/ Application Class Loader:***
+    -  It is child class of Extension class loader. 
+    - Load classes from application class path.
+	- Environment variable is mapped to application class path.
+#### Delegation Hierarchy:
+![alt text](image-118.png)
+- First it will try to fetch/load class from bootstrap class loader. 
+- If class is not found there then Extension class loader and so-on-so-forth.
+#### ***1.2)About Linking:***
+![alt text](image-119.png)
+- There are 3 processes in linking I.e. Verification, Preparation and Resolution.
+####  ***1.2.a)About Verification:***
+-	Ensure correctness of .class file
+-	Check for format
+-	If verification fails throw java.lang.VerifyError
+    -	यदि  कोई  .class file में  change कर  देता  है .. तोह  उससे  ये  invalid बता  देता  है 
+    - और  .class file फिर  execute नहीं  होती
+#### ***1.2.b)About Preparation:***
+- 	Allocates memory for static members.
+-	Initialize memory to default values.
+#### ***1.2.c)About Resolution***
+-	Transform symbolic references into direct reference.
+    -	हमारे  pgm में  symbolic name होते  है .
+    -	resovlution उनको  original name से  replace कर  देता है
+#### ***1.3)Initialization***
+-	All static variables are assigned with values.
+    -	Static value की   default value  को  orginal value से  replace कर  देता  है .
+-	Static block will be executed from top to bottom.
+## ***2)	Memory Areas:***
+![alt text](image-120.png)
+### 2.1) Method Area
+- It will store class level data information
+	- static variable
+	- static reference
+	- static block
+- Only 1 method area per JVM.
+- shared resource.
+### 2.2) Heap Area
+-  Object info store in heap area.
+	- Object
+	- instance variable
+	- arrays
+- One heap area per JVM
+- Shared resource.
+### 2.3) Stack area:
+![alt text](image-121.png)
+- For each thread one runtime stack is created.
+- The block of stack is called Activation record/stack frame.
+- Where we store methods calls.
+- local variable of current running method.
+- Runtime stack will be destroyed after thread is terminated.
+- not a shared resource.
+### 2.4) PC Register
+- It stores address of next executing instruction
+- Each thread has a separate PC register.
+### 2.5) Native Method stack
+-   Store native method information
+-  Separate native stack for each thread.
+### Remember:
+-	Method Area and Heap Area are not thread safe.
+-	Rest others areas are thread safe.
+### ***3)Execution engine***
+![alt text](image-122.png)
+-	It is the component which executes the bytecode (I.e. the program).
+-	Contains other components
+### 3.1) Interpreter:
+- It will execute the bytecode line by line.
+### 3.2) JIT compiler:
+- If any method calls multiples times.
+- then interpreter interprets that method calls multiple time.
+- JIT compiler compiles that code and whenever that method calls it will return value.
+- Execution fast.
+- It provides native code to avoid re-interpretation.
+### 3.3) Garbage Collection
+- Destroyed un referenced objects.
+### ***4) Native method libraries***
+![alt text](image-123.png)
+-	Collection of Native libraries (C, C++ etc.) which are required by execution engine.
+### ***5) JNI (Java Native Interface)***
+- Execution engine use Native libraries via intermediate interface named as JNI.
+## 2. What are the four important characteristics of object-oriented programming?
+- The most important characteristics of object-oriented programming are 
+    - Encapsulation,
+    -  Inheritance,
+    -  Abstraction, 
+    - and Polymorphism.
+##  What are the two major differences between Object-Oriented Programming and Procedural Programming?
+### Object-Oriented Programming:
+- It focuses on the data.
+- It is based on the four main principles of Encapsulation, Inheritance, Abstraction, and Polymorphism.
+### Procedural Programming:
+- It focuses on doing things rather than on data.
+- It is based on the sequence of instructions.
+##  What is Java?
+- ava is a powerful, versatile, and high-level programming language developed by Sun Microsystem. 
+- Originally, Java was known as OAK.
+- It is used for developing platform-independent software (applications) running on desktop computers, mobile devices, and servers.
+## Who developed Java?
+-  Java was invented by James Gosling and his team members in 1994.
+## Why is Java System Independent (Architecture neutral)?
+- Java is system independent because Java bytecode is not associated with any particular hardware platform.
+-  It can be executed on any system machine with any processor and any operating system that implements Java Virtual Machine.
+## Why is Java Portable?
+- Java is portable because java program gives the same result on every system machine.
+## What are the features of Java language?
+- There are the following features of Java language. They are as follows:
+- Simple
+- Object-oriented
+- Distributed
+- Robust
+- Secure
+- System Independence
+- Portability
+- Interpreted
+- High performance
+- Multithreaded
+- Dynamic
+## Give a few examples of object-oriented language other than Java.
+- Two examples of object-oriented languages other than Java are Python, and C++.
+## What is Java API?
+- Java Application Programming Interface (API) is a very large collection of pre-packaged, ready-made software components that provides the core functionality of the Java programming language.
+## What is the popular Java API?
+- java.lang
+- java.io
+- java.util
+- java.math
+- java.sql
+## What is Java Library?
+-  A Java library is a collection of programs that are used to perform the many common tasks in the program.
+##  What is Bytecode in Java?
+- Bytecode in Java is a highly optimized set of instructions for the Java Virtual Machine (JVM) that reads and interprets to run the java program.
+## What are the characteristics of Java Bytecode?
+- Byte code is independent of processor, i.e. java program can be executed on any processor architecture.
+- It does not depend on operating systems such as Windows, Linux, and Mac OS.
+## What is the difference between bytecode and machine code?
+- The main difference between the byte code and machine code is that byte code can be run only on JVM whereas machine code is a set of instructions in machine language that can be directly run by the CPU.
+## What is source code in Java?
+- Java code written by a programmer is called source code.
+## Why compiled java code can execute on different computer machines?
+- Compiled java code can execute on different computer machines because JVM exists differently for different operating systems.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
