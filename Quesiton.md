@@ -23,3 +23,4 @@ https://www.youtube.com/watch?v=tDbTJWziEP0&list=PLn2GH4dN5i2BxPJ3qFXOfPpy_EbQUu
 ## 1-last) What is singleton class in java? How can we make a class singleton?
 
 ### Jit compiler
+### create an new object via ClassLoader

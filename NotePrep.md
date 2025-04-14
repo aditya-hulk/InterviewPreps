@@ -1,0 +1,3 @@
+# Oops Concept
+![alt text](image-124.png)![alt text](image-125.png)![alt text](image-126.png)![alt text](image-127.png)![alt text](image-128.png)![alt text](image-129.png)![alt text](image-130.png)![alt text](image-131.png)![alt text](image-132.png)![alt text](image-133.png)![alt text](image-134.png)![alt text](image-135.png)![alt text](image-136.png)![alt text](image-137.png)![alt text](image-138.png)![alt text](image-139.png)![alt text](image-140.png)![alt text](image-141.png)![alt text](image-142.png)![alt text](image-143.png)![alt text](image-144.png)![alt text](image-145.png)
+# Ways of Creation object in java
