@@ -514,6 +514,16 @@ public class Main {
 ![alt text](image-180.png)
 ### What happen if you won't provide super keyword in above pgm
 ![alt text](image-181.png)
+##
+### Remember:
+- static method are not overriden as instance method.
+- here type of refrence variable decide whcih method is getting called (in case of static)
+- In case of non-static (calling decide by the type of object creation)
+
+![alt text](image-182.png)![alt text](image-183.png)![alt text](image-184.png)![alt text](image-185.png)
+
+
+
 
 
 
